@@ -1,4 +1,3 @@
-import './App.css'
 import {TodoCounter} from './TodoCounter.jsx'
 import {TodoSearch} from './TodoSearch.jsx'
 import {TodoItem} from './TodoItem.jsx'
@@ -7,8 +6,10 @@ import {CreateTodoButton} from './CreateTodoButton.jsx'
 
 const defaultTodo = [
   {text: 'Cortar cebolla', completed: true},
-  {text: 'vivir felizmente', completed: false},
-  {text: 'mentarle la madre a la chancla', completed: true}
+  {text: 'Vivir felizmente', completed: false},
+  {text: 'Hacer cositas que me hagan bien', completed: true},
+  {text: 'Comer saludable', completed: true},
+  {text: 'Vivir increible como dice GNC', completed: true}
 ]
 
 function App() {

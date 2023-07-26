@@ -1,9 +1,11 @@
-function TodoItem({text}) {
+import './TodoItem.css';
+
+function TodoItem({text, completed}) {
   return (
-    <li>
-      <span>V</span>
-      <p>{text}</p>
-      <span>X</span>
+    <li className="TodoItem">
+      <span className={`Icon-check ${completed === true? "Icon-check--activate": ""}`}></span>
+      <p className={`TodoItem-p ${completed === true ? "TodoItem-p--complete": ""}`}>{text}</p>
+      <span className="Icon Icon-delete"></span>
     </li>
   );
 }
