@@ -19,44 +19,10 @@
     font-size: 1.8rem;
     color: #1E1E1F;
     height: 100%;
-    width: 70%;
-}
-
-.Icon {
-    position: absolute;
-    left: 95%;
-    top: 0;
-    transform: translate(-50%, -50%);
-    height: 48px;
-    width: 48px;
-    background-image: url('../public/X.svg');
-    background-repeat: no-repeat;
-    background-size: 24px;
-    background-position: center;
-}
-
-.Icon-check {
-    position: absolute;
-    left: 15%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 48px;
-    width: 48px;
-    background-image: url('../public/Check.svg');
-    background-repeat: no-repeat;
-    background-size: 24px;
-    background-position: center;
-
+    width: 200px;
 }
 
 .TodoItem-p--complete {
-    text-decoration: line-through
-}
-
-.Icon-check--active {
-    color: #4caf50
-}
-
-.Icon:hover {
-    color: red
+    text-decoration: line-through;
+    color: rgba(157, 157, 157, 0.802);
 }

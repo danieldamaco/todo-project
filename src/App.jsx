@@ -28,9 +28,11 @@ function App() {
   }
 
   const deleteTodo = (todo) => {
-    var newTodos = [...todos];
-    const index = todos.indexOf(todo)
-    setTodos((index === 0? newTodos.slice(1,todos.length): newTodos.slice(0, index)));   
+    const index = todos.indexOf(todo);
+    setTodos((
+      index === 0? 
+      todos.slice(1,todos.length): 
+      todos.slice(0, index).concat(todos.slice(index+1,todos.length))));   
   }
 
   const searchedTodos = todos.filter(
@@ -53,7 +55,7 @@ function App() {
         {searchedTodos.map((todo)=>(
           <TodoItem 
             key={todos.indexOf(todo)}
-            onChange={() => completeTodo(todo)}
+            onComplete={() => completeTodo(todo)}
             onDelete = {()=>deleteTodo(todo)}
             text={todo.text}
             completed ={todo.completed}/>
