@@ -3,6 +3,7 @@ import {TodoSearch} from './TodoSearch.jsx'
 import {TodoItem} from './TodoItem.jsx'
 import {TodoList} from './TodoList.jsx'
 import {CreateTodoButton} from './CreateTodoButton.jsx'
+import React from 'react'
 
 const defaultTodo = [
   {text: 'Cortar cebolla', completed: true},
@@ -13,15 +14,47 @@ const defaultTodo = [
 ]
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodo);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const completedTodos = todos.filter(todo => todo.completed).length;
+  const totalTodos = todos.length;
+
+  const completeTodo = (todo) => {
+    const newTodos = [...todos];
+    const index = todos.indexOf(todo)
+    newTodos[index].completed = (newTodos[index].completed === false ? true:false);
+    setTodos(newTodos);
+  }
+
+  const deleteTodo = (todo) => {
+    var newTodos = [...todos];
+    const index = todos.indexOf(todo)
+    setTodos((index === 0? newTodos.slice(1,todos.length): newTodos.slice(0, index)));   
+  }
+
+  const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return todoText.includes(searchText)
+    }
+  );
+
   return (
     <>
-      <TodoCounter completed = {5} total={10}/>
-      <TodoSearch/>
+      <TodoCounter completed = {completedTodos} total={totalTodos}/>
+      <TodoSearch 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}  
+      />
 
       <TodoList>
-        {defaultTodo.map((todo, i)=>(
+        {searchedTodos.map((todo)=>(
           <TodoItem 
-            key = {i} 
+            key={todos.indexOf(todo)}
+            onChange={() => completeTodo(todo)}
+            onDelete = {()=>deleteTodo(todo)}
             text={todo.text}
             completed ={todo.completed}/>
     ))}
