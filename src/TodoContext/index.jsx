@@ -12,6 +12,11 @@ function TodoProvider({ children }) {
     const completedTodos = todos.filter(todo => todo.completed).length;
     const totalTodos = todos.length;
 
+    const createNewTodo = (todo) => {
+        const newTodos = [...todos, todo];
+        saveTodos(newTodos);
+    }
+    
     const completeTodo = (todo) => {
         const newTodos = [...todos];
         const index = todos.indexOf(todo)
@@ -49,7 +54,7 @@ function TodoProvider({ children }) {
             deleteTodo,
             openModal,
             setOpenModal,
-            saveTodos
+            createNewTodo
         }}>
             {children}
         </TodoContext.Provider>
@@ -65,3 +70,20 @@ export { TodoContext, TodoProvider }
 //   { text: 'Comer saludable', completed: true },
 //   { text: 'Vivir increible como dice GNC', completed: true }
 // ]
+
+/*
+agregarlo:
+[...todos, newTodo]
+.setItem('TODOS_V1', nuevoarray)
+
+eliminarlos: 
+proceso de eliminación
+saveTodos
+.setItem('TODOS_V1', nuevoarray)
+
+marcarlo como completado:
+proceso de completado
+saveTodos
+.setItem('TODOS_V1', nuevoarray)
+
+*/
