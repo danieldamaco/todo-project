@@ -8,6 +8,7 @@ html{
 }
 
 body{
+    display: flex;
     margin:0;
     padding:0;
     background:#f2f4f5;
@@ -16,7 +17,9 @@ body{
 }
       
 #root{
+    order: 1;
     margin:0 24px;
     position:relative;
     min-height:100vh
 }
+

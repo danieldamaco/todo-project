@@ -1,0 +1,84 @@
+.todoForm-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 327px;
+    min-height: 313px;
+    background-color: #f2f4f5;
+
+}
+
+.todoForm-title{
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.todoForm-input{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 112px;
+    min-width: 247px;
+    background-color: #f9fbfc;
+    border: 2px solid #202329;
+    text-align:center;
+    font-family:montserrat;
+    font-size: 2rem;
+    font-weight:400;
+    color:#1e1e1f;
+    box-shadow:0 2px 20px rgba(32,35,41,.25);
+}
+
+.todoForm-input::placeholder{
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    font-family: Montserrat;
+    color: #a5a5a5;
+}
+
+.todoForm-input:focus{
+    outline-color: #61dafa;
+}
+
+.todoForm-buttons{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todoForms-buttons--añadir{
+    border: none;
+    min-width: 120px;
+    min-height: 48px;
+    background-color: #61DAFA;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #1E1E1F;
+
+}
+
+.todoForm-buttons--cancelar{
+    border: none;
+    min-width: 120px;
+    min-height: 48px;
+    background-color:   #f2f4f5;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #1E1E1F;
+
+}

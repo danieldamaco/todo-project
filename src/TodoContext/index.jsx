@@ -7,7 +7,8 @@ function TodoProvider({ children }) {
     //Así se renombran los elementos de un objeto nombre: nombre que yo quiero
     const { item: todos, saveItem: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
     const [searchValue, setSearchValue] = React.useState('');
-
+    const [openModal, setOpenModal] = React.useState(false);
+    
     const completedTodos = todos.filter(todo => todo.completed).length;
     const totalTodos = todos.length;
 
@@ -45,7 +46,10 @@ function TodoProvider({ children }) {
             searchedTodos,
             todos,
             completeTodo,
-            deleteTodo
+            deleteTodo,
+            openModal,
+            setOpenModal,
+            saveTodos
         }}>
             {children}
         </TodoContext.Provider>
